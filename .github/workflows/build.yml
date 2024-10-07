@@ -2,7 +2,7 @@ name: SonarCloud
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -43,6 +43,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
+          cd D:\FA24\PRN212\PRN_Code\Test_SonarQube
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"HungNMHE187081_PRN212_.NET-Code" /o:"hungnmhe187081" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
