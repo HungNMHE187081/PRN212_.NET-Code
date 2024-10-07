@@ -19,6 +19,26 @@ namespace SonarCloudTest
             // Example of a magic number
             int result = program.Add(5, 10);
             Console.WriteLine("Result: " + result);
+
+            // Example of a hardcoded string
+            string hardcodedString = "This is a hardcoded string";
+
+            // Example of an empty catch block
+            try
+            {
+                int divisionResult = 10 / 0;
+            }
+            catch (Exception)
+            {
+                // Do nothing
+            }
+
+            // Example of a method with too many parameters
+            program.MethodWithTooManyParameters(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+            // Example of a potential null reference exception
+            string potentiallyNullString = null;
+            Console.WriteLine(potentiallyNullString.Length);
         }
 
         void NonStaticMethod()
@@ -31,10 +51,14 @@ namespace SonarCloudTest
             return a + b;
         }
 
+        void MethodWithTooManyParameters(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j)
+        {
+            Console.WriteLine("This method has too many parameters.");
+        }
+
         void Helloword()
         {
             Console.WriteLine("Hello, World!");
-
         }
     }
 }
