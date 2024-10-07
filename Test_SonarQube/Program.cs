@@ -30,5 +30,11 @@ namespace SonarCloudTest
         {
             return a + b;
         }
+
+        void Helloword()
+        {
+            Console.WriteLine("Hello, World!");
+
+        }
     }
 }
