@@ -3,12 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BusinessObject;
+using WPFApp.Models;
 
 namespace DataAccessLayer
 {
     public class CategoryDAO
     {
-        public static List<Category> 
+       public static List<Category> GetCategories()
+        {
+            var listCategories = new List<Category>();
+            try
+            {
+                using var context = new MyStoreContext();
+                listCategories = context.Categories.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error: " + ex.Message);
+            }
+
+            return listCategories;
+        }
     }
 }
