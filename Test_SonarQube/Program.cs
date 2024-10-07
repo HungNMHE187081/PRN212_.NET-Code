@@ -39,6 +39,12 @@ namespace SonarCloudTest
             // Example of a potential null reference exception
             string potentiallyNullString = null;
             Console.WriteLine(potentiallyNullString.Length);
+
+            // Example of an infinite loop
+            while (true)
+            {
+                Console.WriteLine("This is an infinite loop.");
+            }
         }
 
         void NonStaticMethod()
@@ -54,11 +60,6 @@ namespace SonarCloudTest
         void MethodWithTooManyParameters(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j)
         {
             Console.WriteLine("This method has too many parameters.");
-        }
-
-        void Helloword()
-        {
-            Console.WriteLine("Hello, World!");
         }
     }
 }
